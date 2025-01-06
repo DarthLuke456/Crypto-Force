@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: url('hero-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fafafa;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.register-container, .login-container {
+    background-color: rgba(30, 30, 30, 0.8); /* Slightly transparent grey */
+    padding: 30px;
+    border-radius: 8px;
+    width: 280px; /* Narrow container */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ec4d58;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #bf3b45;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4285F4;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.google-btn img {
+    margin-right: 10px;
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link a {
+    color: #ec4d58;
+    text-decoration: none;
+}
+
+.link a:hover {
+    color: #bf3b45;
+}
+
+/* To prevent the text fields from touching each other */
+input[type="email"], input[type="password"], button {
+    margin-bottom: 10px;
+}
