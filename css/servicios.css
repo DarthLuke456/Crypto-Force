@@ -1,0 +1,183 @@
+/* Reset and basic layout */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Exo 2', sans-serif;
+  background-color: #121212;
+  color: #fafafa;
+}
+
+/* Container styling */
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px 20px; /* Increased top padding for navbar */
+}
+
+/* Main heading */
+.services-container h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #fafafa;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Card styling */
+.service-card {
+  background: rgba(28, 28, 28, 0.9);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(236, 77, 88, 0.2);
+  border-color: rgba(236, 77, 88, 0.3);
+}
+
+/* Icon styling */
+.service-icon {
+  font-size: 3.5rem;
+  color: #ec4d58;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Title styling */
+.service-title {
+  font-size: 1.8rem;
+  color: #fafafa;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Description styling */
+.service-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  min-height: 85px;
+}
+
+/* Button styling */
+.service-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ec4d58;
+  color: #fafafa;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.service-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(236, 77, 88, 0.4);
+  background-color: #ff5a66;
+}
+
+.service-button i {
+  transition: transform 0.3s ease;
+}
+
+.service-button:hover i {
+  transform: translateX(5px);
+}
+
+/* Background styling */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+/* Responsive design */
+@media screen and (max-width: 992px) {
+  .services-grid {
+      gap: 20px;
+  }
+  
+  .service-title {
+      font-size: 1.6rem;
+  }
+  
+  .service-description {
+      font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-container {
+      padding-top: 100px;
+  }
+
+  .services-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+  }
+  
+  .services-container h1 {
+      font-size: 2.5rem;
+  }
+  
+  .service-card {
+      padding: 25px;
+  }
+  
+  .service-description {
+      min-height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-container {
+      padding: 80px 15px 30px 15px;
+  }
+  
+  .services-container h1 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+  }
+  
+  .service-icon {
+      font-size: 3rem;
+  }
+  
+  .service-title {
+      font-size: 1.4rem;
+  }
+  
+  .service-button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}

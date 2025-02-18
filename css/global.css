@@ -1,0 +1,181 @@
+/* Global Styles */
+body {
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fafafa;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212;
+}
+
+/* Background with overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  filter: brightness(0.7); /* Darkens the background */
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main content layout */
+main {
+  padding-top: 100px;
+  margin: 0 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.content-left {
+  flex: 1;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.content-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enhanced Typography with shadows */
+main h1 {
+  font-size: 5.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main p {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-top: 0;
+  font-weight: 400;
+  text-align: left;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Logo styling */
+.logo-image {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.8)); /* Soft shadow for logo */
+}
+
+/* Start Journey Button */
+.start-journey {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ec4d58;
+  color: #fafafa;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  animation: gentlepulse 3s infinite;
+  box-shadow: 0 4px 15px rgba(236, 77, 88, 0.3);
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.start-journey i {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.start-journey:hover i {
+  transform: translateX(3px) rotate(10deg);
+}
+
+/* Animations */
+@keyframes gentlepulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  main h1 {
+    font-size: 4.5rem;
+  }
+  
+  main p {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  .content-left {
+    padding-left: 0;
+  }
+
+  .start-journey {
+    font-size: 1.1rem; /* Slightly smaller on mobile */
+    padding: 10px 20px;
+  }
+  main h1 {
+    font-size: 3.5rem;
+  }
+  
+  main p {
+    font-size: 1.75rem;
+  }
+  
+  .logo-image {
+    max-width: 60%;
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main h1 {
+    font-size: 2.75rem;
+  }
+  
+  main p {
+    font-size: 1.5rem;
+  }
+  .start-journey {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
