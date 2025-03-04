@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <!-- CSS files -->
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/cursos.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/logo.ico">
+    <!-- JavaScript -->
+    <script src="../../js/navbar.js" defer></script>
+</head>
+<body>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+    <div class="content-container">
+        <section class="curso-section">
+            <h1>Nuestros Servicios</h1>
+
+            <!-- Grid de Servicios -->
+            <div class="services-grid">
+                <!-- Mentoría -->
+                <div class="service-card curso-card">
+                    <i class="fas fa-user-graduate service-icon"></i>
+                    <h2 class="service-title">Mentoría</h2>
+                    <p class="service-description">
+                        Recibe orientación personalizada de traders expertos que te guiarán en tu camino hacia el éxito en el trading de criptomonedas.
+                    </p>
+                    <a href="/components/servicios/mentoria.html" class="service-button curso-button">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Más Información</span>
+                    </a>
+                </div>
+
+                <!-- Cursos -->
+                <div class="service-card curso-card">
+                    <i class="fas fa-book-open service-icon"></i>
+                    <h2 class="service-title">Cursos</h2>
+                    <p class="service-description">
+                        Accede a nuestro contenido educativo completo sobre trading, análisis técnico y gestión de riesgos.
+                    </p>
+                    <a href="/components/servicios/cursos.html" class="service-button curso-button">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Ver Cursos</span>
+                    </a>
+                </div>
+
+                <!-- Señales -->
+                <div class="service-card curso-card">
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <h2 class="service-title">Señales</h2>
+                    <p class="service-description">
+                        Recibe alertas y análisis de trading en tiempo real para aprovechar las mejores oportunidades del mercado.
+                    </p>
+                    <a href="/components/servicios/signals.html" class="service-button curso-button">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Obtener Señales</span>
+                    </a>
+                </div>
+
+                <!-- Bot de Trading -->
+                <div class="service-card curso-card">
+                    <i class="fas fa-robot service-icon"></i>
+                    <h2 class="service-title">Bot de Trading</h2>
+                    <p class="service-description">
+                        Trading automático con rentabilidad dinámica de entre el 10% y 20% mensual. Funcionamiento las 24 horas, los 7 días de la semana. Mínimo 500 USDT. Descuentos en comisiones según nivel de fondeo.
+                    </p>
+                    <a href="/components/servicios/bot.html" class="service-button curso-button">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Activar Bot</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script para el Efecto Dinámico -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".service-card");
+
+            cards.forEach((card) => {
+                card.addEventListener("mousemove", (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left; // Posición X relativa a la tarjeta
+                    const y = e.clientY - rect.top; // Posición Y relativa a la tarjeta
+
+                    const width = rect.width;
+                    const height = rect.height;
+
+                    // Calcular la intensidad del brillo en cada borde
+                    const intensityTop = Math.max(0, 1 - (y / height)); // Más cerca del borde superior
+                    const intensityBottom = Math.max(0, y / height); // Más cerca del borde inferior
+                    const intensityLeft = Math.max(0, 1 - (x / width)); // Más cerca del borde izquierdo
+                    const intensityRight = Math.max(0, x / width); // Más cerca del borde derecho
+
+                    // Aplicar el efecto de brillo dinámico
+                    card.style.boxShadow = `
+                        inset 0px ${-intensityTop * 20}px 20px rgba(236, 77, 88, ${intensityTop}),
+                        inset 0px ${intensityBottom * 20}px 20px rgba(236, 77, 88, ${intensityBottom}),
+                        inset ${-intensityLeft * 20}px 0px 20px rgba(236, 77, 88, ${intensityLeft}),
+                        inset ${intensityRight * 20}px 0px 20px rgba(236, 77, 88, ${intensityRight})
+                    `;
+                });
+
+                card.addEventListener("mouseleave", () => {
+                    card.style.boxShadow = "none"; // Restablecer el efecto cuando el cursor sale
+                });
+            });
+        });
+    </script>
+</body>
+</html>

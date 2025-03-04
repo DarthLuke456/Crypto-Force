@@ -1,0 +1,292 @@
+/* Global Styles */
+body {
+  font-family: 'Exo 2', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fafafa;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212;
+}
+
+/* Background with overlay for desktop */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url('../assets/background.jpg'); /* Fondo para escritorio */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+/* Media Query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  body::before {
+    background-image: 
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url('../assets/background.jpg'); /* Fondo para escritorio */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-attachment: scroll; /* Mejor para móviles */
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Main content layout */
+main {
+  padding-top: 100px;
+  margin: 0 20px; /* Margen lateral para escritorio */
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.content-left {
+  flex: 1;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.content-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Enhanced Typography with shadows */
+main h1 {
+  font-size: 5.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+main p {
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-top: 0;
+  font-weight: 400;
+  text-align: left;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Start Journey Button */
+.start-journey {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ec4d58;
+  color: #fafafa;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  animation: gentlepulse 3s infinite;
+  box-shadow: 0 4px 15px rgba(236, 77, 88, 0.3);
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.start-journey i {
+  font-size: 1.2em;
+  transition: transform 0.3s ease;
+}
+
+.start-journey:hover i {
+  transform: translateX(3px) rotate(10deg);
+}
+
+/* Animations */
+@keyframes gentlepulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  main h1 {
+    font-size: 4.5rem;
+  }
+  main p {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    align-items: center; /* Centra todos los elementos */
+    text-align: center; /* Alinea el texto al centro */
+    padding-top: 60px;
+    margin: 0 15px; /* Pequeño margen en los laterales */
+  }
+  .content-left {
+    padding-left: 0;
+    text-align: center; /* Centra el texto en dispositivos móviles */
+  }
+  .content-right {
+    justify-content: center;
+  }
+  .start-journey {
+    font-size: 1.1rem; /* Ligeramente más pequeño en móviles */
+    padding: 10px 20px;
+  }
+  main h1 {
+    font-size: 3.5rem;
+  }
+  main p {
+    font-size: 1.75rem;
+  }
+  .logo-image {
+    max-width: 60%;
+    margin: 20px auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    margin: 0 10px; /* Reducción del margen para pantallas más pequeñas */
+  }
+  main h1 {
+    font-size: 2.75rem;
+  }
+  main p {
+    font-size: 1.5rem;
+  }
+  .start-journey {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(18, 18, 18, 0.8); /* Fondo oscuro con transparencia */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+}
+
+/* Logo dentro del contenedor */
+.login-logo {
+  max-width: 180px; /* Tamaño reducido para que encaje */
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Sombra suave */
+}
+
+.login-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fafafa;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+  padding: 0 15px; /* Mismo margen que el borde izquierdo */
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fafafa;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fafafa;
+  outline: none;
+  box-sizing: border-box; /* Evita que el input desborde */
+}
+
+.form-group input:focus {
+  border-color: #ec4d58;
+}
+
+/* Login Button */
+.login-button {
+  width: calc(100% - 30px); /* Ajuste para el margen */
+  margin: 0 15px; /* Mismo margen que el borde izquierdo */
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #ec4d58;
+  color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #d43f4a;
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #fafafa;
+  padding: 0 15px; /* Mismo margen que el borde izquierdo */
+}
+
+.register-link a {
+  color: #ec4d58;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
