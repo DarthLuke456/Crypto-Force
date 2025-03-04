@@ -57,7 +57,7 @@ a {
 
 /* Main content layout */
 main {
-  padding-top: 100px;
+  padding-top: 120px;
   margin: 0 20px; /* Margen lateral para escritorio */
   max-width: 1400px;
   margin-left: auto;
@@ -72,13 +72,18 @@ main {
   flex: 1;
   text-align: left;
   padding-left: 5%;
+  max-width: 600px; /* Ajusta este valor según sea necesario */
+  align-self: flex-start; /* Alinea el contenedor en la parte superior */
+  margin-top: 0; /* Elimina el margen negativo si lo usaste antes */
+
 }
 
 .content-right {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Alinea el logo en la parte superior */
+  margin-top: -20px; /* Ajusta este valor para subir el logo */
 }
 
 /* Enhanced Typography with shadows */
@@ -201,9 +206,21 @@ main p {
 /* Login Container */
 .login-container {
   max-width: 400px;
-  margin: 40px auto;
+  margin: 40px auto 40px 300px; /* Ajusta el último valor (100px) para moverlo a la derecha */
   padding: 20px;
-  background-color: rgba(18, 18, 18, 0.8); /* Fondo oscuro con transparencia */
+  background-color: rgba(18, 18, 18, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  position: relative;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 40px auto 40px 300px; /* Mueve el login a la derecha en desktop */
+  padding: 20px;
+  background-color: rgba(18, 18, 18, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -289,4 +306,55 @@ main p {
 
 .register-link a:hover {
   text-decoration: underline;
+}
+
+/* Media Queries para el login */
+@media screen and (max-width: 1200px) {
+  .login-container {
+    margin: 40px auto 40px 150px; /* Reduce el margen derecho en pantallas más pequeñas */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    margin: 40px 30px; /* Aumenta los márgenes laterales en tablets */
+    max-width: 90%; /* Ajusta el ancho para que no se vea demasiado grande */
+  }
+
+  .login-logo {
+    max-width: 140px; /* Reduce el tamaño del logo */
+  }
+
+  .login-container h2 {
+    font-size: 1.75rem; /* Reduce el tamaño del título */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-container {
+    margin: 20px 20px; /* Aumenta los márgenes laterales en móviles */
+    padding: 15px; /* Reduce el padding */
+  }
+
+  .login-logo {
+    max-width: 120px; /* Reduce aún más el tamaño del logo */
+  }
+
+  .login-container h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del título */
+  }
+
+  .form-group input {
+    padding: 8px; /* Reduce el padding de los inputs */
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+  }
+
+  .login-button {
+    padding: 10px; /* Reduce el padding del botón */
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+  }
+
+  .register-link {
+    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+  }
 }
