@@ -41,7 +41,7 @@ body::before {
       rgba(0, 0, 0, 0.3) 0%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url('../assets/background.jpg'); /* Fondo para escritorio */
+    url('../assets/background2.jpg'); /* Fondo para escritorio */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
